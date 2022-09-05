@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">BarCoctails</string>
+    <string name="app_name">BarCocktails</string>
+    <string name="all_cocktails">Все коктейли</string>
+    <string name="vermouth_and_bitters_cocktails">Вермут и Биттеры</string>
+    <string name="whiskey_cocktails">Виски</string>
+    <string name="gin_cocktails">Джин</string>
+    <string name="rum_cocktails">Ром</string>
+    <string name="vodka_cocktails">Водка</string>
+    <string name="tequila_cocktails">Текила</string>
+    <string name="liquor_and_shots_cocktails">Ликеры и шоты</string>
+    <string name="bar_name">Bar cocktails</string>
+
+    <string-array name="vermouthAndBittersCocktails">
+        <item>"Veneto Spritzer,Luxardo Aperetivo\nИгристое вино\nСодовая,50\n100\n25"</item>
+        <item>"Pear Spritzer,Luxardo Aperetivo\nГрушевый сидр\nСодовая,50\n100\n25"</item>
+        <item>"Martini Fiero &amp; Tonic,Martini fiero\nТоник,80\n80"</item>
+        <item>"Martini Bianco &amp; Tonic,Martini bianco\nТоник\nСквиз лайма,80\n80\n1д."</item>
+        <item>"Honey Sangria,Настойка на красном вине\nМедовый сироп\nСодовая сплеш,150\n30\n20"</item>
+        <item>"Pink Sangria,Настойка на белом вине\nРозовый джем\nСодовая,150\n2б.л.\n50"</item>
+        <item>"Mishka sour,Beluga Hunting Herbal\nМалиновое пюре\nедовый сироп\nЛимонный сок\nБазилик\nБелок,40\n20\n20\n20\n3шт.\n20"</item>
+    </string-array>
+
+    <integer-array name="imageCocktails">
+        <item>@drawable/veneta_spritzer</item>
+        <item>@drawable/pear_spritzer</item>
+        <item>@drawable/martini_fiero_tonic</item>
+        <item>@drawable/martini_bianca_tonic</item>
+        <item>@drawable/honey_sangria</item>
+        <item>@drawable/pink_sangria</item>
+        <item>@drawable/mishka_sour</item>
+    </integer-array>
 </resources>

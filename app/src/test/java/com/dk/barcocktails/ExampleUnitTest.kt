@@ -1,4 +1,4 @@
-package com.dk.barcoctails
+package com.dk.barcocktails
 
 import org.junit.Test
 
