@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     android:background="#696969">
 
-    <include layout="@layout/main_layout" />
+    <include
+        android:id="@+id/mainLayout"
+        layout="@layout/main_layout" />
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/navView"
         android:background="@color/white"
         app:itemTextColor="@color/black"
         app:itemTextAppearance="?android:attr/textAppearanceLarge"

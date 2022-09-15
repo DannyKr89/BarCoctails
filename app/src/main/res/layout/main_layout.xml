@@ -34,7 +34,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/toolbar"
-        android:text="@string/all_cocktails"
         android:textSize="@dimen/title30"
         android:textColor="@color/white"
         android:paddingHorizontal="@dimen/padding8"

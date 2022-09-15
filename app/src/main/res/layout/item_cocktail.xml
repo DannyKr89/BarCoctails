@@ -34,6 +34,7 @@
             app:layout_constraintStart_toEndOf="@id/imCocktails"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <TextView
             android:id="@+id/tvDescriptionLeft"
             android:layout_width="180dp"
