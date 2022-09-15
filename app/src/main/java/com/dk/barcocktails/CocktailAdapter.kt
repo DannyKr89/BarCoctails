@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.dk.barcocktails.databinding.ItemCocktailBinding
 
-class CocktailAdapter(private val listCocktails: ArrayList<CocktailModel>,
+class CocktailAdapter(private val listCocktails: ArrayList<Cocktail>,
                       private val context: Context
 ) :
     RecyclerView.Adapter<CocktailAdapter.ViewHolder>() {
@@ -20,13 +20,22 @@ class CocktailAdapter(private val listCocktails: ArrayList<CocktailModel>,
         val tvDescriptionR = binding.tvDescriptionRight
         val im = binding.imCocktails
         val cocktailCard = binding.cocktailCard
+        val tvMethod = binding.tvMethod
+        val tvDishes = binding.tvDishes
+        val tvDecoration = binding.tvDecoration
+        val tvIce = binding.tvIce
 
 
-        fun bind(cocktailModel: CocktailModel, context: Context) {
-            tvTitle.text = cocktailModel.titleCocktail
-            tvDescriptionL.text = cocktailModel.descCocktailColOne
-            tvDescriptionR.text = cocktailModel.descCocktailColTwo
-            im.setImageResource(cocktailModel.image_id)
+        fun bind(cocktail: Cocktail, context: Context) {
+            tvTitle.text = cocktail.titleCocktail
+            tvDescriptionL.text = cocktail.descCocktailColOne
+            tvDescriptionR.text = cocktail.descCocktailColTwo
+            val misc = cocktail.misc.split('$').toTypedArray()
+            tvMethod.text = misc[0]
+            tvDishes.text = misc[1]
+            tvDecoration.text = misc[2]
+            tvIce.text = misc[3]
+            im.setImageResource(cocktail.image_id)
             cocktailCard.setOnClickListener() {
                 Toast.makeText(context, "pressed ${tvTitle.text}", Toast.LENGTH_SHORT).show()
             }

@@ -9,18 +9,24 @@
     <string name="tequila_cocktails">Текила</string>
     <string name="liquor_and_shots_cocktails">Ликеры и шоты</string>
     <string name="bar_name">Bar cocktails</string>
+    <string name="method">Метод:</string>
+    <string name="dishes">Посуда:</string>
+    <string name="decoration">Украшение:</string>
+    <string name="ice">Лед:</string>
 
     <string-array name="vermouthAndBittersCocktails">
-        <item>"Veneto Spritzer,Luxardo Aperetivo\nИгристое вино\nСодовая,50\n100\n25"</item>
-        <item>"Pear Spritzer,Luxardo Aperetivo\nГрушевый сидр\nСодовая,50\n100\n25"</item>
-        <item>"Martini Fiero &amp; Tonic,Martini fiero\nТоник,80\n80"</item>
-        <item>"Martini Bianco &amp; Tonic,Martini bianco\nТоник\nСквиз лайма,80\n80\n1д."</item>
-        <item>"Honey Sangria,Настойка на красном вине\nМедовый сироп\nСодовая сплеш,150\n30\n20"</item>
-        <item>"Pink Sangria,Настойка на белом вине\nРозовый джем\nСодовая,150\n2б.л.\n50"</item>
-        <item>"Mishka sour,Beluga Hunting Herbal\nМалиновое пюре\nедовый сироп\nЛимонный сок\nБазилик\nБелок,40\n20\n20\n20\n3шт.\n20"</item>
+        <item>"Veneto Spritzer,Luxardo Aperetivo\nИгристое вино\nСодовая,50\n100\n25,билд + стир$винный бокал$кружок апельсина$кусок"</item>
+        <item>"Pear Spritzer,Luxardo Aperetivo\nГрушевый сидр\nСодовая,50\n100\n25,билд + стир$винный бокал$кружок апельсина$кусок"</item>
+        <item>"Martini Fiero &amp; Tonic,Martini fiero\nТоник,80\n80,билд + стир$винный бокал$кружок апельсина$кусок"</item>
+        <item>"Martini Bianco &amp; Tonic,Martini bianco\nТоник\nСквиз лайма,80\n80\n1д.,билд + стир$винный бокал$вейдж лайма$кусок"</item>
+        <item>"Honey Sangria,Настойка на красном вине\nМедовый сироп\nСодовая сплеш,150\n30\n20,билд + стир$винный бокал$кружок апельсина + веточка тимьяна$кусок"</item>
+        <item>"Pink Sangria,Настойка на белом вине\nРозовый джем\nСодовая,150\n2б.л.\n50,билд + стир$винный бокал$кружок апельсина + кустовая роза$кусок"</item>
+        <item>"Mishka sour,Beluga Hunting Herbal\nМалиновое пюре\nМедовый сироп\nЛимонный сок\nБазилик\nБелок,40\n20\n20\n20\n3шт.\n20,мадл + дабл шейк + дабл стрейн$шале$лист базилика$нет"</item>
+        <item>"Glentwine,Настойка на красном вине\nМед,150\n20,подогреть на пару не доводя до кипения$айриш$1/8 яблока порез. мелким кубиком$нет"</item>
+        <item>"Campari Orange,Campari\nАпельсиновый сок,50\n200,билд$олд фешн$кружок апельсина$кускок"</item>
     </string-array>
 
-    <integer-array name="imageCocktails">
+    <integer-array name="imageCocktailsVermouthAndBitters">
         <item>@drawable/veneta_spritzer</item>
         <item>@drawable/pear_spritzer</item>
         <item>@drawable/martini_fiero_tonic</item>
@@ -28,5 +34,38 @@
         <item>@drawable/honey_sangria</item>
         <item>@drawable/pink_sangria</item>
         <item>@drawable/mishka_sour</item>
+        <item>@drawable/glentwine</item>
+        <item>@drawable/ic_menu</item>
     </integer-array>
+
+    <string-array name="whiskeyCocktails">
+        <item>"Bushmills American OAK 3+1,Bushmills American OAK\nBushmills American OAK\nBushmills American OAK\nBushmills American OAK,40\n40\n40\n40,билд$олд фешн$нет$отдельно"</item>
+        <item>"Bushmills Cola,Bushmills American OAK\nPepsi-Cola,40\n150,билд$олд фешн$вейдж лимона$кусок"</item>
+        <item>"Old Fashioned,Сахар тростниковый\nАроматик биттер\nБурбон хаус\nСодовая,2 шт.\n3деш.\n50\nсплеш,мадл + билд + стир$олд фешн$цедра апельсина + коктейльная вишня$кусок"</item>
+        <item>"Manhattan,Jim Beam Rye\nКрасный вермут\nАнгостура биттер,50\n20\n3 деш.,стир + стрейн$шале$коктейльная вишня$нет"</item>
+        <item>"Penicillin,Дюарс Белая Этикетка\nМедовый сироп\nФреш лимона\nИмбирный фреш\nАшентошан,40\n40\n20\n15\n15,шейк + стрейн + фикс$олд фешн$цедра апельсина$кусок"</item>
+        <item>"Fire Breeze,Fireball\nЯблочный сок\nПюре маракуи\nМиндальный сироп,50\n80\n30\n20,шейк пур$банка Hello Honey$чипс грейпфрута + палочка корицы$кусок"</item>
+        <item>"Apple Jack,Bushmills American OAK\nИмбирный сок\nСироп Корицы\nЛимонный сок\nЯблочный сок,40\n5\n15\n20\n40,шейк + стрейн$олд фешн$чипс грейпфрута + палочка корицы$кусок"</item>
+        <item>"Hello Honey,Bushmills American OAK\nЛайм\nМедовый сироп\nИгристое вино,40\n1/2\n10\n100,билд + стир$банка Hello Honey$выдавленный лайм + коктейльная вишня$кусок"</item>
+        <item>"Bushmills Sour,Bushmills American OAK\nСок лимона\nСахарный сироп\nБелок\nАнгостура биттер,40\n20\n20\n20\n3деш,дабл шейк + дабл стрейн$олд фешн$цедра апельсина$кусок"</item>
+        <item>"Red Hot Chili Sour,Вильям Лоусен Чили\nСахарный сироп\nСок лимона\nАнгостура биттер\nТобаско\nБелок,40\n20\n20\n3деш\n1деш\n20,дабл шейк + дабл стрейн$олд фешн$пудра паприки + перец чили$кусок"</item>
+        <item>"Forever Young,Bushmills American OAK\nКрасный Вермунт\nЦедра Апельсина\nЦедра Лимона\nСахарный сироп\nТимьян\nВишня св морож\nАроматик биттер\nЛимонный сок\nИмбирный Эль\nАпельсин слайс,50\n20\n1\n1\n10\n3шт\n3шт\n2\n15\n100\n1 шт.,билд (настаиваеся 2 дня потом добавляется лимоный фреш и ибирный эль)$банка 4ever young$укрыть пергаментом + завязать украсить чипсом апельсина и тимьяном$кусок"</item>
+    </string-array>
+
+    <integer-array name="imageCocktailsWhiskey">
+        <item>@drawable/bushmills_3_1</item>
+        <item>@drawable/bushmils_cola</item>
+        <item>@drawable/old_fashioned</item>
+        <item>@drawable/manhattan</item>
+        <item>@drawable/penicillin</item>
+        <item>@drawable/fire_breeze</item>
+        <item>@drawable/apple_jack</item>
+        <item>@drawable/hello_honey</item>
+        <item>@drawable/bushmills_sour</item>
+        <item>@drawable/red_hot_chili_sour</item>
+        <item>@drawable/forever_young</item>
+    </integer-array>
+
+
+
 </resources>

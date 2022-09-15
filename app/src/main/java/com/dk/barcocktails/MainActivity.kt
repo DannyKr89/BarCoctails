@@ -7,16 +7,13 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.ItemTouchHelper.*
 import androidx.recyclerview.widget.RecyclerView
 import com.dk.barcocktails.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
-import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private var list = ArrayList<CocktailModel>()
+    private var list = ArrayList<Cocktail>()
     private lateinit var rcCocktails: RecyclerView
     private lateinit var binding: ActivityMainBinding
     private lateinit var navDraw: DrawerLayout
@@ -42,19 +39,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         onNavigationItemSelected(navView.menu.getItem(0))
     }
-    
-    private fun fillArray(cocktails: Array<String>, imageArray:IntArray) : ArrayList<CocktailModel> {
-        val coctailsArray = ArrayList<CocktailModel>()
-        for (cocktal in cocktails.indices){
+
+    private fun fillArray(cocktails: Array<CharSequence>, imageArray: IntArray): ArrayList<Cocktail> {
+        val coctailsArray = ArrayList<Cocktail>()
+        for (cocktal in cocktails.indices) {
             var piece = cocktails.get(cocktal).split(',').toTypedArray()
-            coctailsArray.add(CocktailModel(imageArray.get(cocktal),piece[0],piece[1],piece[2]))
+            coctailsArray.add(
+                Cocktail(
+                    imageArray.get(cocktal),
+                    piece[0],
+                    piece[1],
+                    piece[2],
+                    piece[3]
+                )
+            )
         }
         return coctailsArray
     }
 
 
-    fun getImageId(imageArrayId:Int) : IntArray{
-        var tArray:TypedArray = resources.obtainTypedArray(imageArrayId)
+    fun getImageId(imageArrayId: Int): IntArray {
+        var tArray: TypedArray = resources.obtainTypedArray(imageArrayId)
         val count = tArray.length()
         val ids = IntArray(count)
         for (i in ids.indices) {
@@ -68,13 +73,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.vermouth_and_bitters -> {
                 title.text = item.title
-                list = fillArray(resources.getStringArray(R.array.vermouthAndBittersCocktails),getImageId(R.array.imageCocktails))
+                list = fillArray(
+                    resources.getTextArray(R.array.vermouthAndBittersCocktails),
+                    getImageId(R.array.imageCocktailsVermouthAndBitters)
+                )
                 rcCocktails.adapter = CocktailAdapter(list, this)
                 navDraw.close()
             }
             R.id.whiskey -> {
                 title.text = item.title
-                list.clear()
+                list = fillArray(
+                    resources.getTextArray(R.array.whiskeyCocktails),
+                    getImageId(R.array.imageCocktailsWhiskey)
+                )
                 rcCocktails.adapter = CocktailAdapter(list, this)
                 navDraw.close()
             }
