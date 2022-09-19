@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.rum -> {
                 title.text = item.title
+
                 navDraw.close()
             }
             R.id.vodka -> {
@@ -103,6 +104,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.tequila -> {
                 title.text = item.title
+                list = fillArray(
+                    resources.getTextArray(R.array.tequilaCocktails),
+                    getImageId(R.array.imageCocktailsTequila)
+                )
+                rcCocktails.adapter = CocktailAdapter(list, this)
                 navDraw.close()
             }
             R.id.liquor_and_shots -> {
