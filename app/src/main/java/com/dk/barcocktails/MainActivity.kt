@@ -1,121 +1,93 @@
 package com.dk.barcocktails
 
+import android.content.res.Resources
 import android.content.res.TypedArray
 import android.os.Bundle
-import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.dk.barcocktails.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
-    private var list = ArrayList<Cocktail>()
-    private lateinit var rcCocktails: RecyclerView
+    private var listFraments = listOf<Fragment>(VermouthAndBittersFragment(),WhiskeyFragment())
+    lateinit var vp: ViewPager2
+    lateinit var tabLayout: TabLayout
     private lateinit var binding: ActivityMainBinding
-    private lateinit var navDraw: DrawerLayout
-    private lateinit var navView: NavigationView
-    private lateinit var title: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.navView.setNavigationItemSelectedListener(this)
+        vp = binding.viewPager
+        tabLayout = binding.tabLayout
 
-        title = binding.mainLayout.title
-        navDraw = binding.navDraw
-        navView = binding.navView
-        rcCocktails = binding.mainLayout.rcCocktails
-        rcCocktails.adapter = CocktailAdapter(list, this)
+        vp.adapter = VpAdapter(this,listFraments)
 
-        binding.mainLayout.menuBttn.setOnClickListener() {
-            navDraw.openDrawer(GravityCompat.START, true)
-        }
+        TabLayoutMediator(tabLayout,vp){tab,pos  ->
+            
+        }.attach()
 
-        onNavigationItemSelected(navView.menu.getItem(0))
-    }
-
-    private fun fillArray(cocktails: Array<CharSequence>, imageArray: IntArray): ArrayList<Cocktail> {
-        val coctailsArray = ArrayList<Cocktail>()
-        for (cocktal in cocktails.indices) {
-            var piece = cocktails.get(cocktal).split(',').toTypedArray()
-            coctailsArray.add(
-                Cocktail(
-                    imageArray.get(cocktal),
-                    piece[0],
-                    piece[1],
-                    piece[2],
-                    piece[3]
-                )
-            )
-        }
-        return coctailsArray
     }
 
 
-    fun getImageId(imageArrayId: Int): IntArray {
-        var tArray: TypedArray = resources.obtainTypedArray(imageArrayId)
-        val count = tArray.length()
-        val ids = IntArray(count)
-        for (i in ids.indices) {
-            ids[i] = tArray.getResourceId(i,0)
-        }
-        tArray.recycle()
-        return ids
-    }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.vermouth_and_bitters -> {
-                title.text = item.title
-                list = fillArray(
-                    resources.getTextArray(R.array.vermouthAndBittersCocktails),
-                    getImageId(R.array.imageCocktailsVermouthAndBitters)
-                )
-                rcCocktails.adapter = CocktailAdapter(list, this)
-                navDraw.close()
-            }
-            R.id.whiskey -> {
-                title.text = item.title
-                list = fillArray(
-                    resources.getTextArray(R.array.whiskeyCocktails),
-                    getImageId(R.array.imageCocktailsWhiskey)
-                )
-                rcCocktails.adapter = CocktailAdapter(list, this)
-                navDraw.close()
-            }
-            R.id.gin -> {
-                title.text = item.title
-                navDraw.close()
-            }
-            R.id.rum -> {
-                title.text = item.title
 
-                navDraw.close()
-            }
-            R.id.vodka -> {
-                title.text = item.title
-                navDraw.close()
-            }
-            R.id.tequila -> {
-                title.text = item.title
-                list = fillArray(
-                    resources.getTextArray(R.array.tequilaCocktails),
-                    getImageId(R.array.imageCocktailsTequila)
-                )
-                rcCocktails.adapter = CocktailAdapter(list, this)
-                navDraw.close()
-            }
-            R.id.liquor_and_shots -> {
-                title.text = item.title
-                navDraw.close()
-            }
-        }
-        return true
-    }
+
+
+
+
+    /*   override fun onNavigationItemSelected(item: MenuItem): Boolean {
+           when (item.itemId) {
+               R.id.vermouth_and_bitters -> {
+                   title.text = item.title
+                   list = fillArray(
+                       resources.getTextArray(R.array.vermouthAndBittersCocktails),
+                       getImageId(R.array.imageCocktailsVermouthAndBitters)
+                   )
+                   rcCocktails.adapter = CocktailAdapter(list, this)
+                   navDraw.close()
+               }
+               R.id.whiskey -> {
+                   title.text = item.title
+                   list = fillArray(
+                       resources.getTextArray(R.array.whiskeyCocktails),
+                       getImageId(R.array.imageCocktailsWhiskey)
+                   )
+                   rcCocktails.adapter = CocktailAdapter(list, this)
+                   navDraw.close()
+               }
+               R.id.gin -> {
+                   title.text = item.title
+                   navDraw.close()
+               }
+               R.id.rum -> {
+                   title.text = item.title
+
+                   navDraw.close()
+               }
+               R.id.vodka -> {
+                   title.text = item.title
+                   navDraw.close()
+               }
+               R.id.tequila -> {
+                   title.text = item.title
+                   list = fillArray(
+                       resources.getTextArray(R.array.tequilaCocktails),
+                       getImageId(R.array.imageCocktailsTequila)
+                   )
+                   rcCocktails.adapter = CocktailAdapter(list, this)
+                   navDraw.close()
+               }
+               R.id.liquor_and_shots -> {
+                   title.text = item.title
+                   navDraw.close()
+               }
+           }
+           return true
+       }*/
 }

@@ -5,11 +5,11 @@
     android:id="@+id/cocktailCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="6dp"
     android:backgroundTint="@color/white"
-    app:contentPadding="4dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="3dp">
+    app:cardElevation="1dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,9 +20,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/start"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/start"
             app:srcCompat="@drawable/ic_launcher_foreground"
             tools:ignore="ContentDescription" />
 
@@ -43,8 +43,8 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/start"
             app:layout_constraintEnd_toStartOf="@id/tvDescriptionRight"
+            app:layout_constraintStart_toEndOf="@id/start"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
 
@@ -52,10 +52,10 @@
             android:id="@+id/tvDescriptionRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:gravity="end"
-            app:layout_constraintStart_toEndOf="@id/tvDescriptionLeft"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@id/end"
+            app:layout_constraintStart_toEndOf="@id/tvDescriptionLeft"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
         <TextView
@@ -75,8 +75,8 @@
             android:id="@+id/tvMethod"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingStart="4dp"
             android:gravity="start"
+            android:paddingStart="4dp"
             android:textColor="@color/grey"
             android:textSize="@dimen/miscDesc"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,8 +101,8 @@
             android:id="@+id/tvDishes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingStart="4dp"
             android:gravity="start"
+            android:paddingStart="4dp"
             android:textColor="@color/grey"
             android:textSize="@dimen/miscDesc"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,8 +127,8 @@
             android:id="@+id/tvDecoration"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingStart="4dp"
             android:gravity="start"
+            android:paddingStart="4dp"
             android:textColor="@color/grey"
             android:textSize="@dimen/miscDesc"
             app:layout_constraintEnd_toEndOf="parent"
@@ -153,8 +153,8 @@
             android:id="@+id/tvIce"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingStart="4dp"
             android:gravity="start"
+            android:paddingStart="4dp"
             android:textColor="@color/grey"
             android:textSize="@dimen/miscDesc"
             app:layout_constraintEnd_toEndOf="parent"
