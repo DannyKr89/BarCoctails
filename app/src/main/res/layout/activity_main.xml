@@ -19,6 +19,7 @@
         app:tabTextColor="@color/grey"
         android:background="@color/white"
         app:tabSelectedTextColor="@color/black"
+        app:tabMode="scrollable"
         app:tabRippleColor="@color/black">
     </com.google.android.material.tabs.TabLayout>
 

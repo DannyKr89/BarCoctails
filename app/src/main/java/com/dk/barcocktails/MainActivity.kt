@@ -6,16 +6,22 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.dk.barcocktails.adapters.VpAdapter
 import com.dk.barcocktails.databinding.ActivityMainBinding
-import com.dk.barcocktails.fragments.TequilaFragment
-import com.dk.barcocktails.fragments.VermouthAndBittersFragment
-import com.dk.barcocktails.fragments.WhiskeyFragment
+import com.dk.barcocktails.fragments.*
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
-    private var listFraments = listOf<Fragment>(VermouthAndBittersFragment(), WhiskeyFragment(), TequilaFragment())
-    private var listTabNames = arrayOf("Вермуты и Биттеры", "Виски", "Текила")
+    private var listFraments = listOf<Fragment>(
+        VermouthAndBittersFragment(),
+        WhiskeyFragment(),
+        TequilaFragment(),
+        GinFragment(),
+        RumFragment(),
+        VodkaFragment(),
+        ShotsFragment()
+    )
+    private var listTabNames = arrayOf("Вермуты и Биттеры", "Виски", "Текила", "Джин","Ром","Водка","Шоты")
     lateinit var vp: ViewPager2
     lateinit var tabLayout: TabLayout
     private lateinit var binding: ActivityMainBinding
