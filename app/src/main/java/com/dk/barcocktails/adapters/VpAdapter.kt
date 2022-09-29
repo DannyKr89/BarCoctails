@@ -1,4 +1,4 @@
-package com.dk.barcocktails
+package com.dk.barcocktails.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -1,4 +1,4 @@
-package com.dk.barcocktails
+package com.dk.barcocktails.domain
 
 data class Cocktail(
     var titleCocktail: String,

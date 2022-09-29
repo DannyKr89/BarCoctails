@@ -1,14 +1,12 @@
-package com.dk.barcocktails
+package com.dk.barcocktails.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.dk.barcocktails.domain.Cocktail
 import com.dk.barcocktails.databinding.ItemCocktailBinding
 
-class CocktailAdapter(private val listCocktails: ArrayList<Cocktail>,
-                      private val context: Context
+class CocktailAdapter(private val listCocktails: ArrayList<Cocktail>
 ) :
     RecyclerView.Adapter<CocktailAdapter.ViewHolder>() {
 
@@ -26,7 +24,7 @@ class CocktailAdapter(private val listCocktails: ArrayList<Cocktail>,
         val tvIce = binding.tvIce
 
 
-        fun bind(cocktail: Cocktail, context: Context) {
+        fun bind(cocktail: Cocktail) {
             tvTitle.text = cocktail.titleCocktail
             tvDescriptionL.text = cocktail.descCocktailColOne
             tvDescriptionR.text = cocktail.descCocktailColTwo
@@ -36,9 +34,7 @@ class CocktailAdapter(private val listCocktails: ArrayList<Cocktail>,
             tvDecoration.text = misc[2]
             tvIce.text = misc[3]
             im.setImageResource(cocktail.image_id)
-            cocktailCard.setOnClickListener() {
-                Toast.makeText(context, "pressed ${tvTitle.text}", Toast.LENGTH_SHORT).show()
-            }
+
         }
 
     }
@@ -51,7 +47,7 @@ class CocktailAdapter(private val listCocktails: ArrayList<Cocktail>,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var cocktailModel = listCocktails.get(position)
-        holder.bind(cocktailModel, context)
+        holder.bind(cocktailModel)
     }
 
     override fun getItemCount(): Int {

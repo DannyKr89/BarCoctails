@@ -1,4 +1,4 @@
-package com.dk.barcocktails
+package com.dk.barcocktails.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.dk.barcocktails.R
+import com.dk.barcocktails.adapters.CocktailAdapter
 import com.dk.barcocktails.databinding.FragmentVermouthAndBittersBinding
+import com.dk.barcocktails.domain.FillRecyclerView
 
 class VermouthAndBittersFragment : Fragment() {
     private val imList = intArrayOf(
@@ -40,7 +43,7 @@ class VermouthAndBittersFragment : Fragment() {
         val list = fillRecyclerView.fillArray(resources.getTextArray(R.array.vermouthAndBittersCocktails),
             imList)
 
-        adapter = CocktailAdapter(list, requireContext())
+        adapter = CocktailAdapter(list)
 
         rcVaB = bittersBinding.rcVaB
         rcVaB.adapter = adapter

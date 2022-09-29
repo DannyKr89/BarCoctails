@@ -1,4 +1,4 @@
-package com.dk.barcocktails
+package com.dk.barcocktails.domain
 
 import android.content.res.Resources
 import android.content.res.TypedArray
